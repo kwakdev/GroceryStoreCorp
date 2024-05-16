@@ -55,11 +55,12 @@ class Program
             Console.WriteLine("-      Welcome To Evans Grocery Corperation      -");
             Console.WriteLine("-               You are on the Store Page        -");
             Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("-              Please Enter A Store ID        -");
+            Console.WriteLine("-              List of stores in Evans Corperation        -");
+            Console.WriteLine("-              A-add a store  E-edit a store D-delete a store       -");
             Console.WriteLine("--------------------------------------------------");
             foreach (var storeName in storeData.Stores)
             {
-                Console.WriteLine($"Store ID: {storeName.StoreId}" + $"Store Name: {storeName.Name}");
+                Console.WriteLine($"Store ID: {storeName.StoreId} " + $"Store Name: {storeName.Name}");
 
             }
             Console.WriteLine("StoreID: ");
