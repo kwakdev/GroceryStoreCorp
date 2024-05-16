@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
+using static System.Formats.Asn1.AsnWriter;
 
 
 class Program
 {
     static void Main()
     {
-        Console.WriteLine("--------------------------------------------------");
-        Console.WriteLine("-      Welcome To Evans Grocery Corperation      -");
-        Console.WriteLine("-               You are on the main page         -");
-        Console.WriteLine("--------------------------------------------------");
-        Console.WriteLine("-              Please Select A Department        -");
-        Console.WriteLine("--------------------------------------------------");
-
-        // Create an instance of StoreData and fill it with sample data
         StoreData storeData = DataHelper.CreateSampleData();
 
         // Serialize StoreData object to JSON and write it to a file
@@ -42,7 +35,40 @@ class Program
         {
             Console.WriteLine($"Error reading from JSON file: {ex.Message}");
         }
+
+
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("-      Welcome To Evans Grocery Corperation      -");
+        Console.WriteLine("-               You are on the main page         -");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("-              Please Select A Department        -");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("-      To View All The Stores And Their Data using the store number enter 1");
+        Console.WriteLine("-      To View All The Suppliers And Their Data enter 2");
+        Console.WriteLine("-      To View All The Reports enter 3");
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+
+        if (choice == 1)
+        {
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("-      Welcome To Evans Grocery Corperation      -");
+            Console.WriteLine("-               You are on the Store Page        -");
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("-              Please Enter A Store ID        -");
+            Console.WriteLine("--------------------------------------------------");
+            foreach (var storeName in storeData.Stores)
+            {
+                Console.WriteLine($"Store ID: {storeName.StoreId}" + $"Store Name: {storeName.Name}");
+
+            }
+            Console.WriteLine("StoreID: ");
+            int Storechoice = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Create an instance of StoreData and fill it with sample data
+
     }
 
-   
+
 }
