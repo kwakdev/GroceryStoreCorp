@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "employee": {
+      "type": "object",
+      "properties": {
+        "employee_id": { "type": "string" },
+        "name": { "type": "string" },
+        "position": { "type": "string" },
+        "contact": { "type": "string" },
+        "hire_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "salary": { "type": "number" }
+      },
+      "required": [ "employee_id", "name", "position", "contact", "hire_date", "salary" ]
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "product_id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "brand": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "quantity": { "type": "integer" },
+        "supplier": { "$ref": "#/definitions/supplier" }
+      },
+      "required": [ "product_id", "name", "category", "brand", "description", "price", "quantity", "supplier" ]
+    },
+    "saleItem": {
+      "type": "object",
+      "properties": {
+        "product_id": { "type": "string" },
+        "quantity": { "type": "integer" }
+      },
+      "required": [ "product_id", "quantity" ]
+    },
+    "sale": {
+      "type": "object",
+      "properties": {
+        "transaction_id": { "type": "string" },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time": { "type": "string" },
+        "employee_id": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/saleItem" }
+        },
+        "total_amount": { "type": "number" },
+        "payment_method": { "type": "string" }
+      },
+      "required": [ "transaction_id", "date", "time", "employee_id", "items", "total_amount", "payment_method" ]
+    },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "customer_id": { "type": "string" },
+        "name": { "type": "string" },
+        "contact": { "type": "string" },
+        "loyalty_points": { "type": "integer" },
+        "purchase_history": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/sale" }
+        }
+      },
+      "required": [ "customer_id", "name", "contact", "loyalty_points", "purchase_history" ]
+    },
+    "supplier": {
+      "type": "object",
+      "properties": {
+        "supplier_id": { "type": "string" },
+        "name": { "type": "string" },
+        "contact": { "type": "string" },
+        "products_supplied": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "delivery_schedule": { "type": "string" }
+      },
+      "required": [ "supplier_id", "name", "contact", "products_supplied", "delivery_schedule" ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "stores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "store_id": { "type": "string" },
+          "name": { "type": "string" },
+          "address": { "type": "string" },
+          "contact": { "type": "string" },
+          "hours": { "type": "string" },
+          "manager": { "$ref": "#/definitions/employee" }
+        },
+        "required": [ "store_id", "name", "address", "contact", "hours", "manager" ]
+      }
+    },
+    "inventory": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/product" }
+    },
+    "employees": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/employee" }
+    },
+    "sales": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/sale" }
+    },
+    "customers": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/customer" }
+    },
+    "promotions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "promotion_id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "discount_percentage": { "type": "number" },
+          "applicable_products": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": [ "promotion_id", "name", "description", "discount_percentage", "applicable_products" ]
+      }
+    },
+    "suppliers": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/supplier" }
+    },
+    "reports": {
+      "type": "object",
+      "properties": {
+        "sales_reports": {
+          "type": "object",
+          "properties": {
+            "date_range": { "type": "string" },
+            "total_sales": { "type": "number" }
+          },
+          "required": [ "date_range", "total_sales" ]
+        },
+        "inventory_reports": {
+          "type": "object",
+          "properties": {
+            "low_stock_items": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "out_of_stock_items": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": [ "low_stock_items", "out_of_stock_items" ]
+        },
+        "financial_reports": {
+          "type": "object",
+          "properties": {
+            "total_revenue": { "type": "number" },
+            "total_expenses": { "type": "number" },
+            "net_profit": { "type": "number" }
+          },
+          "required": [ "total_revenue", "total_expenses", "net_profit" ]
+        },
+        "employee_performance_reports": {
+          "type": "object",
+          "properties": {
+            "top_performers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "employee_id": { "type": "string" },
+                  "name": { "type": "string" },
+                  "total_sales": { "type": "number" }
+                },
+                "required": [ "employee_id", "name", "total_sales" ]
+              }
+            }
+          },
+          "required": [ "top_performers" ]
+        }
+      },
+      "required": [ "sales_reports", "inventory_reports", "financial_reports", "employee_performance_reports" ]
+    }
+  },
+  "required": [ "stores", "inventory", "employees", "sales", "customers", "promotions", "suppliers", "reports" ]
+}

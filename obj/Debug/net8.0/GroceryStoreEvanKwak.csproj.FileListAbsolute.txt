@@ -1,0 +1,17 @@
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.AssemblyInfoInputs.cache
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.AssemblyInfo.cs
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.csproj.CoreCompileInputs.cache
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\GroceryStoreEvanKwak.exe
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\GroceryStoreEvanKwak.deps.json
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\GroceryStoreEvanKwak.runtimeconfig.json
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\GroceryStoreEvanKwak.dll
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\GroceryStoreEvanKwak.pdb
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.csproj.AssemblyReference.cache
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryS.F777F0A5.Up2Date
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.dll
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\refint\GroceryStoreEvanKwak.dll
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.pdb
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\GroceryStoreEvanKwak.genruntimeconfig.cache
+C:\Users\evank\source\repos\GroceryStoreEvanKwak\GroceryStoreEvanKwak\obj\Debug\net8.0\ref\GroceryStoreEvanKwak.dll
